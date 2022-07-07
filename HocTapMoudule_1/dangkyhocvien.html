@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DANG KY HOC VIEN</title>
+</head>
+<body>
+    <form method="post">
+      <table style="background-color:rgb(245, 245, 112) ;" >
+          <caption style="background-color:aquamarine; color: blue; text-align: left;"> ĐĂNG KÝ HỌC VIÊN </caption>
+          <tr>
+            <td style="color:blue;" >Họ và tên</td>
+            <td><input type="text" name="name"></td>
+          </tr>
+          <tr>
+            <td style="color:blue;" >Ngày sinh</td>
+            <td><input type="date" name="date"></td>
+          </tr>
+          <tr>
+            <td styled > Giới tính</td>
+            <td><label><input name="gender" value="man" type="radio"/> Nam</label>
+              <label><input name="gender" value="women" type="radio"/> Nữ</label></td>
+          </tr>
+          <tr>
+            <td style="color:blue;" >Địa chỉ </td>
+            <td><textarea cols="50" rows="4" name="adress"></textarea></td>
+          </tr>
+          <tr>
+            <td style="color:blue;">Lớp</td>
+            <td><select name="Class">
+              <option value="">--Chọn lớp--</option>
+              <option value="">Lớp 10a1</option>
+              <option value="">Lớp 10a2</option>
+              <option value="">Lớp 10a3</option>
+              <option value="">Lớp 10a4</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td styled >Email</td>
+            <td><input type="email" name="email"></td>
+          </tr>
+          <tr>
+            <td style="color:blue;">Điện thoại</td>
+            <td><input type="text" name="phone"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="button" name="submit" value="Gửi thông tin">
+            <input type="reset" name="submit" value="Nhập lại"></td>
+          </tr>
+        </table>
+    </form>
+</body>
+</html>
