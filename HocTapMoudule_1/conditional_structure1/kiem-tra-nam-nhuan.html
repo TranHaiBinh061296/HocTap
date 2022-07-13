@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kiểm tra năm nhuận</title>
 </head>
 <body>
 </body>
 </html>
 <script>
-    let year = parseInt(prompt("Enter a year"));
+let year = parseInt(prompt("Enter a year"));
 if (year % 4 == 0) {
   if (year % 100 == 0) {
     if (year % 400 == 0) {
-      alert(year + " is a leap year");
+      alert(year + " is a lead year");
     } else {
-      alert(year + " is NOT a leap year");
+      alert(year + " is NOT a lead year");
     }
   } else {
-    alert(year + " is a leap year");
+    alert(year + " is a lead year");
   }
 } else {
-  alert(year + " is NOT a leap year");
+  alert(year + " is NOT a lead year");
 }
 </script>
