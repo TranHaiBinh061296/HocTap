@@ -1,35 +1,50 @@
-<html>
-   
-   <head>
-      <title>JavaScript Animation</title>
-      
-      <script type="text/javascript">
-         <!--
-            var imgObj = null;
-            
-            function init(){
-               imgObj = document.getElementById('myImage');
-               imgObj.style.position= 'relative'; 
-               imgObj.style.left = '0px'; 
-            }
-            
-            function moveRight(){
-               imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
-            }
-            
-            window.onload =init;
-         //-->
-      </script>
-      
-   </head>
-   
-   <body>
-   
-      <form>
-         <img id="myImage" src="./images/html.gif" />
-         <p>Click button below to move the image to right</p>
-         <input type="button" value="Click Me" onclick="moveRight();" />
-      </form>
-      
-   </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="docReady()">
+    <img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;left:0; top:0;" height="100" width="80"/>
+    </body>
 </html>
+<script>
+    function upArrowPressed() {
+    let element = document.getElementById("nobita");
+    element.style.top = parseInt(element.style.top) - 5 + 'px';
+}
+function downArrowPressed() {
+    var element = document.getElementById("nobita");
+    element.style.top = parseInt(element.style.top) + 5 + 'px';
+}
+function leftArrowPressed() {
+    var element = document.getElementById("nobita");
+    element.style.left = parseInt(element.style.left) - 5 + 'px';
+}
+function rightArrowPressed() {
+    var element = document.getElementById("nobita");
+    element.style.left = parseInt(element.style.left) + 5 + 'px';
+
+}
+function moveSelection(evt) {
+    switch (evt.keyCode) {
+        case 37:
+            leftArrowPressed();
+            break;
+        case 39:
+            rightArrowPressed();
+            break;
+        case 38:
+            upArrowPressed();
+            break;
+        case 40:
+            downArrowPressed();
+            break;
+    }
+}
+function docReady() {
+    window.addEventListener('keydown', moveSelection);
+}
+</script>
