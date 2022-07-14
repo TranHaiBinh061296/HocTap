@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <label for="Number_A">Nhập a</label>
+            </td>
+            <td><input type="number" id="Number_A"></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Number_B">Nhập b</label>
+            </td>
+            <td><input type="number" id="Number_B"></td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Number_C">Nhập c</label>
+            </td>
+            <td><input type="number" id="Number_C"></td>
+        </tr>
+            <td colspan="2" >
+                <button type="button" onclick="pT()">Giải PT</button>
+                <button type="reset" onclick="Cacel()">cancel</button>
+            </td>
+        </tr>
+    </table>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function pT() {
+        let tsA = Number(document.getElementById("Number_A").value);
+        let tsB = Number(document.getElementById("Number_B").value);
+        let tsC = Number(document.getElementById("Number_C").value);
+        let result = "";
+        if (tsA == 0) {
+            if (tsB == 0){
+                if (tsC == 0){
+                    document.getElementById("result").innerHTML = "Phương trình có vô số nghiệm";
+                } else {
+                    document.getElementById("result").innerHTML = "Phương trình vô nghiệm";
+                }
+            } else {
+                    document.getElementById("result").innerHTML = "Phương trình có 1 nghiệm là:" + (-tsC/tsB);
+                }
+        } else {
+            let delta = tsB*tsB - 4*tsA*tsC;
+            if (delta <0){
+                document.getElementById("result").innerHTML = "Phương trình vô nghiệm";
+            }
+            else if (delta == 0){
+                document.getElementById("result").innerHTML =
+                "Phương trình có nghiệm kép x<sub>1</sub> = x<sub>2</sub> = " + ((- tsB)/(2*tsA));
+            }
+            else {
+                document.getElementById("result").innerHTML =
+                "Phương trình có 2 nghiệm phân biệt: <br> x<sub>1</sub> = " + (((- tsB)+(Math.sqrt(dt)))/(2*tsA)) + "<br>và<br>"
+                 + "x<sub>2</sub> = " + (((-tsB)-(Math.sqrt(dt)))/(2*tsA));
+            }
+        } 
+    }
+</script>

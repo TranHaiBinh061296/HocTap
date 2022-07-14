@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,22 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="this.innerHTML=Date()">The time is?</button>
+    
 </body>
 </html>
 <script>
-    let year = parseInt(prompt("Enter a year"));
-if (year % 4 == 0) {
-  if (year % 100 == 0) {
-    if (year % 400 == 0) {
-      alert(year + " is a leap year");
-    } else {
-      alert(year + " is NOT a leap year");
+    let userName = prompt("Who's there?", '');
+if (userName == 'Admin') {
+    let pass = prompt('Password?', '');
+    if (pass == 'TheMaster') {
+    	alert('Welcome!');
+    } else if (pass == null) {
+        alert('Canceled.');
     }
-  } else {
-    alert(year + " is a leap year");
-  }
+} else if (userName == null) {
+    alert('Canceled');
 } else {
-  alert(year + " is NOT a leap year");
+    alert("I don't know you");
 }
 </script>
