@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chỉ số cân nặng</title>
+</head>
+<body>
+    <h1>Tính chỉ số cân nặng </h1>
+    <label for="can_nang">Nhập cân nặng: (kg)</label>
+    <input type="number" name="" id="can_nang"><br><br>
+    <label for="chieu_cao">Nhập chiều cao: (m)</label>
+    <input type="number" name="" id="chieu_cao"><br><br>
+    <button onclick="kiemTra()" type="button">Kiểm tra</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>  
+    function kiemTra() {
+        let weight = Number(document.getElementById("can_nang").value);
+        let height = Number(document.getElementById("chieu_cao").value);
+        let BMI = weight /(Math.pow(height , 2));
+
+        if (BMI < 18.5) {
+            document.getElementById("result").innerHTML = "Chỉ số BMI là:" + BMI  +  ".Underweight ";
+        } else if ( BMI < 25) {
+            document.getElementById("result").innerHTML = "Chỉ số BMI là:" + BMI  + ".Normal ";
+        } else if ( BMI < 30) {
+            document.getElementById("result").innerHTML = "Chỉ số BMI là:" + BMI  + ".Overweight ";
+        } else {
+            document.getElementById("result").innerHTML = "Chỉ số BMI là:" + BMI  + ".Obese ";
+        }
+    }
+</script>
