@@ -1,50 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body onload="docReady()">
-    <img id="nobita" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;left:0; top:0;" height="100" width="80"/>
-    </body>
-</html>
-<script>
-    function upArrowPressed() {
-    let element = document.getElementById("nobita");
-    element.style.top = parseInt(element.style.top) - 5 + 'px';
-}
-function downArrowPressed() {
-    var element = document.getElementById("nobita");
-    element.style.top = parseInt(element.style.top) + 5 + 'px';
-}
-function leftArrowPressed() {
-    var element = document.getElementById("nobita");
-    element.style.left = parseInt(element.style.left) - 5 + 'px';
-}
-function rightArrowPressed() {
-    var element = document.getElementById("nobita");
-    element.style.left = parseInt(element.style.left) + 5 + 'px';
+    <title>CSS Basic</title>
+    <style>
+        h1 {
+            color: orange !important;
+            background-color: green;
+            font-size: 40px;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 30px;
+        }
 
-}
-function moveSelection(evt) {
-    switch (evt.keyCode) {
-        case 37:
-            leftArrowPressed();
-            break;
-        case 39:
-            rightArrowPressed();
-            break;
-        case 38:
-            upArrowPressed();
-            break;
-        case 40:
-            downArrowPressed();
-            break;
-    }
-}
-function docReady() {
-    window.addEventListener('keydown', moveSelection);
-}
-</script>
+        div {
+            width: 600px;
+            height: 300px;
+            border: 5px solid red;
+            padding: 10px 10px 10px 10px;
+            /* margin: 20px 20px 20px 20px; */
+            /* margin:20px; */
+            /* margin: 20px 50px 20px 50px; */
+            margin: 20px 50px;
+            /* margin-top: 10px; */
+            /* margin-bottom: 10px;
+            margin-right: 10px;
+            margin-left: 10px; */
+            /* background-image: url("images/up.jpg"); */
+            /* background-size: cover; */
+            background-image: linear-gradient(to right bottom, red, yellow, blue, orange);
+            /* transform: rotate(45deg); */
+        }
+
+        @media only screen and (max-width: 600px) {
+            div{
+                /* display: block; */
+                width: 200px;
+                padding: 0px;
+                margin: 0px;
+            }   
+        }
+        body{
+            background-image: url("images/up.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: right bottom;
+        }
+    </style>
+    <!-- Relationship -->
+    <link rel="stylesheet" href="site.css">
+</head>
+
+<body>
+    <div></div>
+    <input name="fullname" type="text">
+    <br>
+    <input name="age" type="number">
+    <br>
+    <input name="email" type="email">
+    <br>
+    <input name="score" type="number">
+    <!-- 
+        1. CSS của Web browser (4)
+        2. CSS Inline style (1)
+        3. CSS Internal Style (2)
+        4. CSS External Style (3)
+     -->
+    <!-- đô ưu tiên -->
+    <!-- CSS Inline style -> CSS Internal Style -> CSS External Style -> CSS của Web browser -->
+    <!-- Sử dụng ! important sau value nếu muốn phá vở độ ưu tiên -->
+    <h1 style="color: red; 
+            background-color: green;
+            font-size: 40px;
+            font-family: 'Courier New', Courier, monospace;">Heading 1</h1>
+    <h2 class="h2">Heading 2.1</h2>
+    <h2 id="h2_2">Heading 2.2</h2>
+    <h2 class="h2">Heading 2.3</h2>
+    <p class="h2">Paragraph</p>
+    <a href="#">Go to google</a>
+    <br>
+    <button>Go to home page</button>
+    <input type="text">
+
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">News</a></li>
+        <li><a href="">Buletin board</a></li>
+        <li><a href="">Site map</a></li>
+    </ul>
+    <input type="checkbox">
+    <div>
+        <p>Vestibulum aliquam sollicitudin enim, sit amet facilisis lorem gravida in. Etiam ac metus rhoncus, viverra
+            eros euismod, rhoncus justo</p>
+        <p>Donec mattis a augue gravida feugiat. Nulla tincidunt elit non tortor pharetra</p>
+    </div>
+
+
+
+</body>
+
+</html>
