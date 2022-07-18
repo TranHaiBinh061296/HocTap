@@ -2,7 +2,14 @@
     <head>
         <title>You must love me</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <script type="text/javascript">
+    </head>
+    <body>
+        <h1 style="position:absolute; left:220px; top:175px;">Do you love me?</h1>
+        <input type="button" value=" YES " onclick="yesClick()" style="position:absolute; left:285px; top:235px;"/>
+        <input type="button" id="btnNo" value="  NO  " onmouseover="noHover()" style="position:absolute; left:360px; top:235px;"/>
+    </body>
+</html>
+<script type="text/javascript">
     function yesClick()
     {
         alert("Yes. you are right ");
@@ -15,10 +22,3 @@
         document.getElementById('btnNo').style.top = y + 'px';
     }
     </script>
-    </head>
-    <body>
-        <h1 style="position:absolute; left:220px; top:175px;">Do you love me?</h1>
-        <input type="button" value=" YES " onclick="yesClick()" style="position:absolute; left:285px; top:235px;"/>
-        <input type="button" id="btnNo" value="  NO  " onmouseover="noHover()" style="position:absolute; left:360px; top:235px;"/>
-    </body>
-</html>

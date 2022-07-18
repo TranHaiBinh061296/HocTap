@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính hoa hồng</title>
+</head>
+<body>
+    <script>
+        let doanhso = Number(prompt("Nhập doanh số bán hàng (triệu)"));
+        let hoahong = "";
+        if (doanhso >= 100) {
+            hoahong = doanhso*10/100;
+            document.write("Tiền hoa hồng nhận được : " + hoahong + " triệu");
+        } else if (doanhso >= 50 ) {
+            hoahong = doanhso*7/100;
+            document.write("Tiền hoa hồng nhận được : " + hoahong  + " triệu" );
+        } else if (doanhso >= 20) {
+            hoahong = doanhso*5/100;
+            document.write("Tiền hoa hồng nhận được : " + hoahong + " triệu" );
+        } else {
+            hoahong = doanhso*3/100;
+            document.write("Tiền hoa hồng nhận được : " + hoahong + " triệu" );
+        }
+    </script>
+</body>
+</html>

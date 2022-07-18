@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+    <script>
+        let sophut = Number(prompt("Nhập số phút đã sử dụng"));
+        const phicodinh = 25000;
+        let phi = "";
+        if (sophut > 200) {
+            phi = (sophut -200)*200 + (150*400) + (50*600);
+            tong = phi + phicodinh;
+            document.write("Bạn đã gọi  : " + sophut + " Số tiền bạn phải nộp là :" + tong )
+        } else if (sophut > 50) {
+            phi = (sophut -50)*400 + (50*600);
+            tong = phi + phicodinh;
+            document.write("Bạn đã gọi : " + sophut + " Số tiền bạn phải nộp là :" + tong )
+        } else {
+            phi = sophut*600;
+            tong = phi + phicodinh;
+            document.write("Bạn đã gọi :" + sophut + " Số tiền bạn phải nộp là :" + tong )
+        }
+        
+    </script>
+</body>
+</html>
