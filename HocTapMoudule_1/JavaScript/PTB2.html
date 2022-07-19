@@ -8,6 +8,7 @@
 </head>
 <body>
     <table>
+        <h1></h1>
         <tr>
             <td>
                 <label for="Number_A">Nhập a</label>
@@ -28,7 +29,7 @@
         </tr>
             <td colspan="2" >
                 <button type="button" onclick="pT()">Giải PT</button>
-                <button type="reset" onclick="Cacel()">cancel</button>
+                <button type="button" onclick="cancel()">cancel</button>
             </td>
         </tr>
     </table>
@@ -67,4 +68,9 @@
             }
         } 
     }
+    function cancel() {
+        document.getElementById("number_A").value= null;    
+        document.getElementById("number_B").value= null;    
+        document.getElementById("number_C").value= null;       
+        }
 </script>

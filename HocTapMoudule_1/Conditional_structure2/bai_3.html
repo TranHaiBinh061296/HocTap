@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích hình vuông</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <caption><h3>Tính diện tích hình vuông</h3></caption>
+            <tr>
+                <td>
+                    <label for="numberA">Cạnh a</label>
+                </td>
+                <td>
+                    <input type="number" id="numberA">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="result">Diện tích</label>
+                </td>
+                <td>
+                    <input disabled type="number" id="result">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="calculate()">Calculate</button>
+                    <button onclick="cancel()">Cancel</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   <script>
+    function calculate() {
+        let a = Number(document.getElementById("numberA").value);
+        document.getElementById("result").value = a**2
+    }
+    function cancel() {
+        document.getElementById("numberA").value = null;
+        document.getElementById("result").value = null;
+    }
+   </script> 
+</body>
+</html>

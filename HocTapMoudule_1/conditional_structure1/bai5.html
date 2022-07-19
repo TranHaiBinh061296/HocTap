@@ -12,13 +12,13 @@
         let hs2 = Number(prompt("Nhập điểm thi giữa kỳ "));
         let hs3 = Number(prompt("Nhập điểm thi cuối kỳ"));
         let total = (hs1 +(hs2 * 2) + (hs3 *3))/ 6;
-        if (total >= 8) {
+        if (total <= 10 && total >= 8) {
             alert(total + ". Xếp hạng học lực loại Giỏi");
-        } else if (total >= 6.5) {
+        } else if (total < 8 && total >= 6.5) {
             alert( total + ". Xếp hạng học lực loại Khá");
-        } else if (total >= 5) {
+        } else if (total < 6.5 && total >= 5) {
             alert(total + ". Xếp hạng học lực loại Trung binh");
-        } else if (total >= 3.5) {
+        } else if (total < 5 && total >= 3.5) {
             alert(total + ". Xếp hạng học lực loại Yếu");
         } else {
             alert (total + ". Xếp hạng học lực loại Kém")

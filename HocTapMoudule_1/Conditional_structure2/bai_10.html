@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương trình tính giá điện</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <h1>Chương trình tính giá điện </h1>
+            <tr>
+                <td>
+                    <label for="sodien">Nhập số điện tiêu thụ ( kwh) :</label>
+                </td>
+                <td>
+                    <input type="number" id="sodien">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="result">Số tiền bạn phải trả (vnd)</label>
+                </td>
+                <td>
+                    <input disabled type="number" id="result">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" onclick="calculate()">Calculate</button>
+                    <button type="button" onclick="cancel()">Cancel</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+    
+<script>
+    function calculate() {
+        let bac1 = 1678;
+    let bac2 = 1734;
+    let bac3 = 2014;
+    let bac4 = 2536;
+    let bac5 = 2834;
+    let bac6 = 2927;
+    let dientieuthu = Number(document.getElementById("sodien").value);
+    let tien = "" ;
+    if (dientieuthu <=0 ) {
+        document.getElementById("result").value= ("Vui lòng nhập số lượng điện tiêu thụ");
+    } else if (dientieuthu <= 50) {
+        tien = dientieuthu*bac1;
+        document.getElementById("result").value= tien;
+    } else if (dientieuthu <= 100 ) {
+        tien = (50*bac1) + ((dientieuthu-50)*bac2);
+        document.getElementById("result").value = tien;
+    } else if (dientieuthu <= 200) {
+        tien = (100*bac2) + ((dientieuthu-100)*bac3);
+        document.getElementById("result").value = tien;
+    } else if (dientieuthu <= 300) {
+        tien = (200*bac3) + ((dientieuthu-200)*bac4);
+        document.getElementById("result").value= tien;
+    } else if (dientieuthu <= 400) {
+        tien = (300*bac4) + ((dientieuthu-300)*bac5);
+        document.getElementById("result").value= tien;
+    } else if (dientieuthu > 400) {
+        tien = (400*bac5) + ((dientieuthu-400)*bac6);
+        document.getElementById("result").value = tien;
+    }
+    }
+    function cancel() {
+        document.getElementById("sodien").value= null;    
+        document.getElementById("result").value= null;      
+        }
+</script>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tính lãi ngân hàng</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <h1> Chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con).</h1>
+            <tr>
+                <td>
+                    <label for="bandau">Số tiền ban đầu</label>
+                </td>
+                <td>
+                    <input type="number" id="bandau">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="sothang">Số tháng cho vay</label>
+                </td>
+                <td>
+                    <input type="number" id="sothang">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="laisuat">Lãi xuất hàng tháng (%)</label>
+                </td>
+                <td>
+                    <input type="number" id="laisuat">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="result">Giá trị của tương lai</label>
+                </td>
+                <td>
+                    <input disabled type="number" id="result">
+                </td>
+            </tr>   
+            <tr>
+                <td>
+                    <button type="button" onclick="calculate()">Calculate</button>
+                    <button type="button" onclick="cancel()">Cancel</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    function calculate() {
+        let tienhienTai =Number(document.getElementById("bandau").value);
+        let soThang = Number(document.getElementById("sothang").value);
+        let laiSuat = Number(document.getElementById("laisuat").value);
+        if (tienhienTai <= 0) {
+            document.getElementById("result").value = 0
+        } else {
+            document.getElementById("result").value = (tienhienTai * Math.pow((1+(laiSuat/100)),soThang)).toFixed(1);
+        }
+    }
+    function cancel() {
+        document.getElementById("bandau").value= null;    
+        document.getElementById("sothang").value= null;    
+        document.getElementById("laisuat").value= null;    
+        document.getElementById("result").value= null;      
+        }
+</script>

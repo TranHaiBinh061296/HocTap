@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển từ mét sang feet</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <h1>Chuyển từ mét sang feet</h1>
+            <tr>
+                <td>
+                    <label for="met">Nhập m:</label>
+                </td>
+                <td>
+                    <input type="number" id="met">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="result">Feet </label>
+                </td>
+                <td>
+                    <input readonly type="text" id="result">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" onclick="calculate()">Calculate</button>
+                    <button type="button" onclick="cancel()">Cancel</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function calculate() {
+            let m = Number(document.getElementById("met").value);
+            let result = document.getElementById("result");
+            if (m >= 0) {
+                result.value = m * 3.2808;
+            } else {
+                result.value ="Vui lòng nhập số dương";
+            }
+        }
+        function cancel() {
+        document.getElementById("met").value= null;    
+        document.getElementById("result").value= null;        
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển từ độ C sang độ F</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <h1>Chuyển từ độ C sang độ F </h1>
+            <tr>
+                <td>
+                    <label for="sodien">Nhập độ C :</label>
+                </td>
+                <td>
+                    <input type="number" id="sodo">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="result">Độ F </label>
+                </td>
+                <td>
+                    <input disabled type="number" id="result">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" onclick="calculate()">Calculate</button>
+                    <button type="button" onclick="cancel()">Cancel</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function calculate() {
+            let doC = Number(document.getElementById("sodo").value);
+            document.getElementById("result").value = (doC * (9/5) + 32).toFixed(1);
+        }
+        function cancel() {
+        document.getElementById("sodo").value= null;    
+        document.getElementById("result").value= null;        
+        }
+    </script>
+</body>
+</html>

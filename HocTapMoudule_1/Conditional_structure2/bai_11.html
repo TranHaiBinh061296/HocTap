@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương trình tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <h1> Tính thuế thu nhập cá nhân</h1>
+            <tr>
+                <td>
+                    <label for="numberA">Nhập thu nhập của bạn (triệu đồng)</label>
+                </td>
+                <td>
+                    <input type="number" id="numberA">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="result">Kết quả (Thuế phải nộp)</label>
+                </td>
+                <td>
+                    <input type="number" id="result">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" onclick="calculate()">Calculate</button>
+                    <button type="button" onclick="cancel()">Cancel</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function calculate() {
+            let thue1 = (5/100);
+            let thue2 = (10/100);
+            let thue3 = (15/100);
+            let thue4 = (20/100);
+            let thue5 = (25/100);
+            let thunhap = Number(document.getElementById("numberA").value);
+            let tienthue = 0;
+            
+            if (thunhap < 0) {
+                document.getElementById("result").value = 0 ;
+            } else if (thunhap <= 5) {
+                tienthue  = thunhap * thue1;
+                document.getElementById("result").value = tienthue;
+            } else if (thunhap <= 10) {
+                tienthue = (5*thue1) + ((thunhap-5)*thue2);
+                document.getElementById("result").value = tienthue;
+            } else if (thunhap <=18) {
+                tienthue = (10*thue2) + ((thunhap-10)*thue3);
+                document.getElementById("result").value = tienthue;
+            } else if (thunhap <= 32) {
+                tienthue = (18*thue3) + ((thunhap-18)*thue4);
+                document.getElementById("result").value = tienthue;
+            } else if (thunhap > 32) {
+                tienthue = (32*thue4) + ((thunhap-32)*thue5);
+                document.getElementById("result").value = tienthue;
+            }
+        }
+        function cancel() {
+        document.getElementById("numberA").value= null;    
+        document.getElementById("result").value= null;      
+        }
+
+    </script>
+</body>
+</html>

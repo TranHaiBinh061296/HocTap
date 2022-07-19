@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích hình chữ nhật</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <caption><h3>Tính diện tích hình chữ nhật</h3></caption>
+            <tr>
+                <td>
+                    <label for="numberA">Cạnh a</label>
+                </td>
+                <td>
+                    <input type="number" id="numberA">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="numberB">Cạnh b</label>
+                </td>
+                <td>
+                    <input type="number" id="numberB">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="result">Kết quả</label>
+                </td>
+                <td>
+                    <input disabled type="number" id="result">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="calculate()">Calculate</button>
+                    <button onclick="cancel()">Cancel</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    function calculate() {
+    // 1. lấy number A
+    let number_A = Number(document.getElementById("numberA").value);
+    // 2. lấy number B
+    let number_B = Number(document.getElementById('numberB').value);
+    // 3. tính tổng
+    let area = number_A * number_B;
+    // 4. hiển thi kết quả
+    document.getElementById('result').value = area;
+}
+
+function cancel(){
+    document.getElementById("numberA").value = null;
+    document.getElementById('numberB').value = null;
+    document.getElementById('result').value = null;
+}
+</script>
