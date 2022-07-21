@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</h1>
+    <script>
+        let sum = 0;
+        let count = 0;
+        let dayso = "";
+        for (let i=1; ; i++) {
+            if (i % 7 == 0) {
+                dayso += i + " ";
+                console.log(dayso);
+                sum += i;
+                count++
+                if (count==30) {
+                    break;
+                }
+            }
+        } document.write(dayso + "<br>");
+          document.write("Tổng của 30 số chia hết cho 7 đầu tiên là  : " + sum);
+    </script>
+</body>
+</html>

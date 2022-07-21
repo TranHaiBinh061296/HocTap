@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="doanso()">Bắt đầu</button>
+    <script>
+        function doanso() {
+            let number = +parseInt(prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?"));
+            let number_ran = Math.floor(Math.random() * number);
+            console.log(number_ran);
+            let number_check = +prompt("Nhập số bạn đoán");
+            let count = 0;
+            while (number_check !== number_ran) {
+                count++;
+                if (count == 4) {
+                    alert("Bạn hết số lần đoán")
+                    break;
+                } else if (number_check < number_ran) {
+                    alert("Số bạn đoán bé hơn");
+                } else {
+                    alert("Số bạn đoán lớn hơn")
+                }
+                number_check = prompt("Nhập số bạn đoán");
+            }
+            if (count == 4) {
+                document.write("Bạn hết số lần đoán")
+            } else {
+                document.write("Bạn đã đoán đúng số. Chúc mừng bạn!")
+            }
+        }
+    </script>
+</body>
+
+</html>

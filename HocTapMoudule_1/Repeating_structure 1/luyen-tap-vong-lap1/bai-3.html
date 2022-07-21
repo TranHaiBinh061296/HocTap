@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+    <h1>Hiển thị ra 20 số trong dãy fibonacci</h1>
+    <script>
+        // let F =0, F0=0, F1 =0, i=0;
+        // let fibonacci = "";
+        // for (i; i<20; i++) {
+        //     if (i==0) {
+        //         F=1
+        //         F1=1
+        //         fibonacci += F + "" + "<br>"
+        //     } else {
+        //         F=F0+F1
+        //         F0 = F1
+        //         F1=F
+        //         fibonacci += F + "" + "<br>"
+        //     }
+        // } document.write(fibonacci);
+        let a=0;
+        let b=1;
+        let c=a+b;
+        document.write(a+" ");
+        document.write(b+" ");
+        for (let i=3;i<=20;i++){
+            document.write(c+" ");
+            a=b;
+            b=c;
+            c=a+b;
+        }
+    </script>
+</body>
+</html>
