@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="a"> Số tiền gửi vào ngân hàng :</label> 
+    <input type="text" value="" id="a">      
+
+    <label for="r"> lãi suất (%):</label> 
+    <input type="text" value="" id="r"> 
+
+    <label for="n"> Số tháng gửi :</label> 
+    <input type="text" value="" id="n"> 
+    
+    <input type="button" value="Calculate" onclick="Calculate()">
+    <h3 id="result"></h3>
+    <script>
+        let res = document.getElementById("result");
+        function Calculate() {
+            let a = parseFloat(document.getElementById("a").value);
+            let r = parseFloat(document.getElementById("r").value);
+            let n = parseFloat(document.getElementById("n").value);
+            let result = 0 ;
+            if (isNaN(a)||isNaN(r)||isNaN(n)) {
+                res.innerHTML = " input  must be a number "
+            }  else {
+                result = a*(1+r/100*n);
+                res.innerHTML = result;
+            }
+        }
+    </script>
+</body>
+</html>

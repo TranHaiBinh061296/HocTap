@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <script>
+        let jobs = "<table>";
+        let jobCount = 5;
+        jobs += "<tbody>"
+        for (let row = 1; row <= jobCount; row++) {
+            jobs +=
+            `<tr>
+                <td >Job ${row}</td>
+                <td>
+                    <button>Remove</button>
+                </td>
+            </tr>`
+        }
+        jobs += "</tbody>";
+        jobs += "<table>";
+
+    </script>
+</body>
+
+</html>

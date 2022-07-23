@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Tính giai thừa của một số nguyên dương</h1>
+    <label for="n">N</label><input type="number" id="n">
+    <button type="button" id="btn" onclick="giaThua()">Calculate</button>
+    <h2 id="result"></h2>
+    <script>
+        function giaThua() {
+            let n = Number(document.getElementById("n").value);
+            if (isNaN(n)) {
+                document.getElementById("result").innerHTML = 'Input must be a number.'
+            } else {
+                let result = 1;
+                for (i = n; i > 0; i--) {
+                    result = result * i;
+                }
+                document.getElementById("result").innerHTML = `${n}! = ${result}`;
+            }
+        }
+    </script>
+</body>
+
+</html>

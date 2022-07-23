@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>In dãy Fibonaci</h1>
+    <h1 id="result" style="text-align: center"> </h1>
+    <script>
+        // function Fibonancci(n) {
+        //     if (n < 2) {
+        //         return 1;
+        //     } else {
+        //         return Fibonancci(n-2) + Fibonancci(n-1);
+        //     }
+        // }    
+        // function display() {
+        //     let n = prompt("Nhập số lượng số Finbonancci đầu tiên cần hiển thị :")
+        //     let res = document.getElementById("result");
+        //     let arrayOfFibo = ``;
+        //     for ( var i = 1; i<=n; i++) {
+        //         arrayOfFibo += `${Fibonancci(i)} ;`;
+        //     }
+        //     res.innerHTML = arrayOfFibo;
+        // }
+        // display();
+    </script>
+    <script>
+       let a = 0;
+       let b=1;
+       let c = a + b;
+       let n = prompt("Nhập số lượng số Finbonancci đầu tiên cần hiển thị :")
+    for (let i = 3; i<= n; i++) {
+        document.write(c + " ");
+        a = b;
+        b = c;
+        c = a+ b;
+    }
+    </script>
+</body>
+</html>

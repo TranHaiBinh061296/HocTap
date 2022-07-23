@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> In hình chữ nhật</title>
+</head>
+<body>
+    <h1> In hình chữ nhật</h1>
+    <script>
+        for (let i = 0; i<=7; i++) {
+            if (i==0 || i==7) {
+                for (j=0; j<20; j++) {
+                    document.write("*");
+                }
+            } else {
+                for (j=0; j<20; j++) {
+                    if (j==0 || j == 19) {
+                        document.write("*");
+                    } else {
+                        document.write("&nbsp;&nbsp;")
+                    }
+                }
+            } document.write("<br>")
+        }
+    </script>
+</body>
+</html>
