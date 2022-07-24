@@ -38,7 +38,7 @@
 </head>
 
 <body>
-    <div id="job-area"></div>
+    <!-- <div id="job-area"></div>
     <script>
         let jobcount = 5;
         let html = "<table>";
@@ -92,6 +92,60 @@
         }
 
 
+    </script> -->
+    <div id="job_area"></div>
+    <script>
+        let jobcount = 5;
+        html = "<table>";
+        html += "<tbody>";
+        for (let row = 1; row <= jobcount; row++) {
+            html += `
+            <tr id="tr_${row}">
+                <td jobname="Job ${row}"> Job ${row} </td>
+                <td> 
+                    <button id="btnEdit_${row}" onclick="updateJob(${row})" > Edit </button>
+                    <button id="btnSave_${row}" class="d-none" onclick="saveJob(${row})" > Save </button>
+                    <button id="btnCancel_${row}" class="d-none" onclick="cancelJob(${row})" > Cancel </button>
+                </td>
+                <td>
+                    <button onclick="removeJob(${row})"> Remove </button>
+                </td>
+            </tr>
+            `
+        } html += "</tbody>";
+          html += "</table>";
+          document.querySelector(`#job_area`).innerHTML = html;
+
+          function removeJob(row) {
+            let confirmed = window.confirm("Bạn có muốn xóa Job này?");
+            if (confirmed) {
+                document.querySelector(`#tr_${row} td:first-child`).classList.add('done');
+            }
+          }
+          function updateJob(row) {
+            let tdJob = document.querySelector(`#tr_${row} td:first-child`);
+            let oldjobName = tdJob.innerText;
+            tdJob.innerHTML = `<input type="text" id="jobname_${row}" value="${oldjobName}">`;
+            document.querySelector(`#btnEdit_${row}`).classList.add('d-none');
+            document.querySelector(`#btnSave_${row}`).classList.remove('d-none');
+            document.querySelector(`#btnCancel_${row}`).classList.remove('d-none');
+          }
+          function cancelJob(row) {
+            let tdJob = document.querySelector(`#tr_${row} td:first-child`);
+            let jobName = document.querySelector(`#tr_${row} td:first-child`).getAttribute('jobname');
+            tdJob.innerHTML= jobName;
+            document.querySelector(`#btnEdit_${row}`).classList.remove('d-none');
+            document.querySelector(`#btnSave_${row}`).classList.add('d-none');
+            document.querySelector(`#btnCancel_${row}`).classList.add('d-none');
+          }
+          function saveJob(row) {
+            let tdJob = document.querySelector(`#tr_${row} td:first-child`);
+            let jobName = document.querySelector(`#jobname_${row}`).value;
+            tdJob.innerHTML = jobName;
+            document.querySelector(`#btnEdit_${row}`).classList.remove('d-none');
+            document.querySelector(`#btnSave_${row}`).classList.add('d-none');
+            document.querySelector(`#btnCancel_${row}`).classList.add('d-none');
+          }
     </script>
 </body>
 

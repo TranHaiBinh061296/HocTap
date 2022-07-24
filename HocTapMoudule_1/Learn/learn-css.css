@@ -1,0 +1,77 @@
+#ckb-agree:checked{
+    transform: scale(2);
+}
+
+input[type='text']:focus{
+    border: none;
+    outline: none;
+    border: 1px solid red;
+}
+
+button{
+    padding: 7px 15px;
+}
+
+div{
+    width: 100px;
+    height: 100px;
+    /* padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 15px;
+    padding-left: 20px; */
+    /* padding: 10px 5px 15px 20px; */
+    /* padding: 10px 5px 10px 5px; */
+    /* padding: 10px 5px; */
+    padding: 10px;
+    /* shorthand */
+    background-color: #ffff00;
+
+    border-width: 3px;
+    /* border-top-width: 1px;
+    border-right-width: 2px;
+    border-bottom-width: 3px;
+    border-left-width: 4px; */
+    border-style: dashed;
+    border-color: red;
+
+    /* border: 3px dashed red; */
+    margin: 5px;
+}
+
+/* div:hover{
+    border-radius: 50%;
+    background-color: orange;
+    cursor: wait;
+} */
+
+h4{
+    color: red !important;
+}
+h4::before{
+    content: "* ";
+}
+h4::after {
+    content: " *";
+}
+
+p::first-letter{
+    font-size: 50px;
+    font-weight: bolder;
+    color: orange;
+    margin-right: 2px;
+}
+
+p::first-line{
+    color: orange;
+}
+
+/* p::selection{
+    color: red;
+    background-color: orange;
+} */
+button:hover{
+    background-color: green;
+    color: white;
+    border: none;
+    outline: none;
+}
