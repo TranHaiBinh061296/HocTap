@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td {
+            border: 1px solid rgb(97, 222, 97) ;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        td {
+            height: 30px;
+            
+        }
+        input {
+            height: 90%;
+            width:250px ;
+            font-size: 20px;
+        }
+        button {
+            border: none;
+            font-size:20px ;
+            color: rgb(229, 170, 92);
+        }
+        button:hover {
+            background-color: rgb(218, 23, 111);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- // thiết kế chương trình để thực hiện nhiệm vụ sau:
+// 1. Ô để nhập vào kích cỡ
+// 2. Ô để nhập giá trị min
+// 3. Ô để nhập giá trị max
+// 4. Ô để hiển thị mảng
+// 5. Ô để hiển thị tổng các giá trị có trong mảng
+// 6. Ô để hiển thị giá trị lớn nhất trong mảng
+// 7. Ô để hiển thị số lượng các số chẵn có trong mảng
+// 8. Có 1 button, khi click vào button này thì sẽ xử lý và trả kết quả vào trong các ô từ 4 đến 7
+// Khi bấm vào nút button thì sẽ tạo ra 1 mảng có kích cỡ là size và các giá trị được sinh ngẫu nhiên trong [min, max]
+// sau đó xử lý để hiển thị vào các ô từ 4 đến 7 -->
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="size">Nhập kích thước (size) của mảng :</label></td>
+                <td>
+                    <input type="number" id="size">
+                </td>
+            </tr>
+            <tr>
+                <td><label for=""id="min" >Nhập giá trị min của mảng :</label></td>
+                <td>
+                    <input type="number" id="Smin">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Nhập giá trị max  của mảng :</label></td>
+                <td>
+                    <input type="number" id="Smax">
+                </td>
+            </tr>
+            <tr>
+                <td><label for=""> Mảng :</label></td>
+                <td>
+                    <input type="text" id="arrays">
+                </td>
+            </tr>
+            <tr>
+                <td><label for=""> Tổng các giá trị trong mảng :</label></td>
+                <td>
+                    <input type="text" id="sumarrays">
+                </td>
+            </tr>
+            <tr>
+                <td><label for=""> Giá trị lớn nhất trong mảng :</label></td>
+                <td>
+                    <input type="text" id="biggest">
+                </td>
+            </tr>
+            <tr>
+                <td><label for=""> Số lượng các số chẵn có trong mảng là :</label></td>
+                <td>
+                    <input type="text" id="evenarrays">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center"><button onclick="findArrays()">Result</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function findArrays() {
+            let sizeAr = Number(document.getElementById("size").value);
+            let min = Number(document.getElementById("Smin").value);
+            let max = Number(document.getElementById("Smax").value);
+            let Arrays = document.getElementById("arrays");
+            let sumA = document.getElementById("sumarrays");
+            let evenA = document.getElementById("evenarrays");
+            let big = document.getElementById("biggest");
+            let total = 0;
+            let numbers = new Array (sizeAr);
+            for (let row = 0; row < numbers.length; row++) {
+                numbers[row] = Math.floor(Math.random()*(max-min+1)+min);
+            }
+            Arrays.value = numbers;
+
+            for (let i = 0; i < numbers.length; i++) {
+                total += numbers[i];
+            } sumA.value = total;
+
+            let valuemax = numbers[0];
+            for (let j = 0; j < numbers.length; j++) {
+                if (numbers[j] > valuemax) {
+                    valuemax = numbers[j];
+                }
+            } big.value = valuemax;
+
+
+            let count = 0;
+            for (let k = 1; k < numbers.length; k++) {
+                if (numbers[k] % 2 == 0) {
+                    count++;
+                }
+            } evenA.value = count;
+        } 
+    </script>
+</body>
+</html>

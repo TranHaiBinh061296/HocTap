@@ -4,9 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ứng dụng good-fast-cheap</title>
+    <style>
+        body{
+            font-size: 2em;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            font-family: sans-serif;
+        }
+        .check{
+            position: relative;
+        }
+        .check::before{
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 25px;
+            background-color: #ddd ;
+            display: inline-block;
+            top: -8px;
+            left: -30px;
+            border-radius: 25px;
+            box-shadow: 0 0 3px rgba(0,0,0,.5);
+        }
+        .check::after{
+            content: '';
+            width: 25px;
+            height: 25px;
+            background-color: rgb(250, 131, 151);
+            position: absolute;
+            border-radius: 25px;
+            top: -8px;
+            left: -30px;
+            transition: 200ms;
+        }
+        .check:checked::after{
+            left: -5px;
+        }
+        .check:checked::before{
+            background-color: rgb(17, 247, 47);
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <input type="checkbox" class="check good" id="good">
+        <label for="good">Good</label><br>
+        <input type="checkbox" class="check fast" id="good">
+        <label for="fast">Fast</label><br>
+        <input type="checkbox" class="check cheap" id="good">
+        <label for="cheap">Cheap</label>
+    </div>
 </body>
+        <script>
+            let good = document.querySelector('.good'),
+                fast = document.querySelector('.fast'),
+                cheap = document.querySelector('.cheap');
+            function changed(el) {
+                isGood = good.checked;
+                isFast = fast.checked;
+                isCheap = cheap.checked;
+                if(isGood && isFast && isCheap && el==cheap){
+                    fast.checked = false;
+                }
+                if(isGood && isCheap && isFast && el==fast){
+                    good.checked = false;
+                }
+                if(isCheap && isFast && isGood && el==good){
+                    cheap.checked = false;
+                }
+            }
+        </script>
 </html>
