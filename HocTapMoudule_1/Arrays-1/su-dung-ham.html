@@ -17,18 +17,39 @@
         // console.log(mycolor.toString());
 
         //   Bài 2
-        var num = window.prompt();
-        var str = num.toString();
-        var result = [str[0]];
+        // var num = window.prompt();
+        // var str = num.toString();
+        // var result = [str[0]];
 
-        for (var x = 1; x < str.length; x++) {
-            if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
-                result.push('-', str[x]);
-            } else {
+        // for (var x = 1; x < str.length; x++) {
+        //     if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
+        //         result.push('-', str[x]);
+        //     } else {
+        //         result.push(str[x]);
+        //     }
+        // }
+        // console.log(result.join(''));
+
+        // Bài 3:
+        var str = 'Hello World';
+        const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        const result = [];
+
+        for (let x = 0; x < str.length; x++) {
+            if (UPPER.includes(str[x])) {
+                result.push(str[x].toLowerCase());
+            }
+            else if (LOWER.includes(str[x])) {
+                result.push(str[x].toUpperCase());
+            }
+            else {
                 result.push(str[x]);
             }
         }
         console.log(result.join(''));
+
+
     </script>
 </body>
 
