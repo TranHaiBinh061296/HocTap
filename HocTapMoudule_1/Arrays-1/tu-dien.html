@@ -30,6 +30,16 @@
             }
         }
     }
+    for (let i = 0; i < array_Vie.length; i++) {
+        if (string == array_Vie[i]) {
+            index_eng = i; //2
+            for (let j = 0; j < array_Eng.length; j++) {
+                if (index_eng == j) { //2 == 2
+                    result = array_Eng[j];  
+                }
+            }
+        }
+    }
     document.getElementById("result").innerHTML = result;
 }
     </script>

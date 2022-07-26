@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. <br> Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.</h3>
+    <script>
+        let number = [5, 4, 2, 3, 10, 11, 7, 15, 9];
+        number.sort(function(n1,n2){
+            return n2 - n1;
+        });
+        document.write(number);
+    </script>
+</body>
+</html>

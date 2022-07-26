@@ -17,32 +17,23 @@
         }
         input {
             height: 90%;
-            width:250px ;
+            width:400px ;
             font-size: 20px;
         }
         button {
             border: none;
             font-size:20px ;
-            color: rgb(149, 164, 184);
+            color: rgb(44, 3, 3);
         }
         button:hover {
-            background-color: rgb(27, 5, 85);
+            background-color: rgb(4, 81, 6);
             cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <!-- // thiết kế chương trình để thực hiện nhiệm vụ sau:
-// 1. Ô để nhập vào kích cỡ
-// 2. Ô để nhập giá trị min
-// 3. Ô để nhập giá trị max
-// 4. Ô để hiển thị mảng
-// 5. Ô để hiển thị tổng các giá trị có trong mảng
-// 6. Ô để hiển thị giá trị lớn nhất trong mảng
-// 7. Ô để hiển thị số lượng các số chẵn có trong mảng
-// 8. Có 1 button, khi click vào button này thì sẽ xử lý và trả kết quả vào trong các ô từ 4 đến 7
-// Khi bấm vào nút button thì sẽ tạo ra 1 mảng có kích cỡ là size và các giá trị được sinh ngẫu nhiên trong [min, max]
-// sau đó xử lý để hiển thị vào các ô từ 4 đến 7 -->
+    <h1>Luyện tập mảng 01</h1>
+    <h4>Bài 1, Bài 2, Bài 3, Bài 4</h4>
     <table>
         <tbody>
             <tr>
@@ -54,7 +45,7 @@
             <tr>
                 <td><label for=""id="min" >Nhập giá trị min của mảng :</label></td>
                 <td>
-                    <input type="number" id="Smin">
+                    <input type="number" id="Smin" value="">
                 </td>
             </tr>
             <tr>
@@ -70,9 +61,9 @@
                 </td>
             </tr>
             <tr>
-                <td><label for=""> Tổng các giá trị trong mảng :</label></td>
+                <td><label for=""> Số lượng các số lớn hơn hoặc bằng 10 :</label></td>
                 <td>
-                    <input type="text" id="sumarrays">
+                    <input type="text" id="amount">
                 </td>
             </tr>
             <tr>
@@ -82,9 +73,15 @@
                 </td>
             </tr>
             <tr>
-                <td><label for=""> Số lượng các số chẵn có trong mảng là :</label></td>
+                <td><label for=""> Giá trị tổng và trung bình của các phần tử trong mảng:</label></td>
                 <td>
-                    <input type="text" id="evenarrays">
+                    <input type="text" id="trungbinh">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="daonguoc"> Đảo ngược các phần tử trong mảng:</label></td>
+                <td>
+                    <input type="text" id="daonguoc">
                 </td>
             </tr>
             <tr>
@@ -98,35 +95,45 @@
             let min = Number(document.getElementById("Smin").value);
             let max = Number(document.getElementById("Smax").value);
             let Arrays = document.getElementById("arrays");
-            let sumA = document.getElementById("sumarrays");
-            let evenA = document.getElementById("evenarrays");
             let big = document.getElementById("biggest");
-            let total = 0;
+            let amount = document.getElementById("amount");
+            let medium = document.getElementById("trungbinh");
+            let contradictory = document.getElementById("daonguoc");
             let numbers = new Array (sizeAr);
             for (let row = 0; row < numbers.length; row++) {
                 numbers[row] = Math.floor(Math.random()*(max-min+1)+min);
             }
             Arrays.value = numbers;
 
-            for (let i = 0; i < numbers.length; i++) {
-                total += numbers[i];
-            } sumA.value = total;
-
-            let valuemax = numbers[0];
-            for (let j = 0; j < numbers.length; j++) {
-                if (numbers[j] > valuemax) {
-                    valuemax = numbers[j];
-                }
-            } big.value = valuemax;
-
-
-            let count = 0;
-            for (let k = 1; k < numbers.length; k++) {
-                if (numbers[k] % 2 == 0) {
+            let count = 0; //hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
+            for (let i = 0; i< numbers.length; i++) {
+                if (numbers[i] >= 10) {
                     count++;
+                } 
+            } amount.value = count;
+
+            let index = 0; //Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+            let maxvalue = numbers[0];
+            for ( let j = 0; j< numbers.length; j++) {
+                if (numbers[j] > maxvalue) {
+                     maxvalue = numbers[j];
+                    index = j;
                 }
-            } evenA.value = count;
+            } big.value = `${maxvalue} Vị trí thứ ${index}`;
+
+            let total = 0; //In ra giá trị trung bình của các phần tử trong mảng.
+            let trungbinh = 0;
+            for (let k =0; k < numbers.length; k++) {
+                total += numbers[k];
+            } trungbinh = (total / numbers.length) ;
+            medium.value = `Tổng : ${total}, Value trung bình : ${trungbinh} `;
+
+
+            for (let h = 0; h < numbers.length; h++) { // đảo ngược các phần tử trong mảng.
+                contradictory.value = numbers.reverse().join();
+            } 
         } 
+
     </script>
 </body>
 </html>
