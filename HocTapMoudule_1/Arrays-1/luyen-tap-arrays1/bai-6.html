@@ -8,18 +8,25 @@
 </head>
 <body>
     <h3> Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.</h3>
+    <p id="result"></p>
     <script>
+        
         let count = 0;
         let number = [5, 5, 4, 2, 3, 10, 20, 11, 7, 15, 9];
-        let V = Number(prompt("Nhập phần tử số nguyên V :"));
-        for (let i = 0; i< number.length; i++) {
-            number[i] = V;
-            count++;
-        }
-        if (count !== 0) {
-            document.write(`${V} is in the array `);
-        } else {
-            document.write(`${V} is not in the array `);
+        document.write(`[${number}]`);
+        document.write(`<br><br><button onclick="search()" >Search</button>`);
+        function search() {
+            let V = Number(prompt("Nhập phần tử số nguyên V :"));
+            for (let i = 0; i< number.length; i++) {
+               if ( number[i] == V) {
+                   count++;
+               }
+            }
+            if (count !== 0) {
+                document.getElementById("result").innerHTML = (`${V} is in the array `);
+            } else {
+                document.getElementById("result").innerHTML = (`${V} is not in the array `);
+            }
         }
     </script>
 </body>
