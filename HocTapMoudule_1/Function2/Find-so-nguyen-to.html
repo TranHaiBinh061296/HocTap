@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let number = parseInt(prompt("Nhập số cần check :"));
+        function isPrime(number) {
+            let count = 0; //để đếm số ước đang kiểm tra
+            let isPrime = false;
+
+            if (number == 0) {
+                document.write(number + "không phải là số nguyên tố");
+            } else {
+                for (let i = 0; i <= number; i++) {
+                    if (number % i == 0) {
+                        count += 1;
+                    }
+                } if (count == 2) {
+                    isPrime = true;
+                }
+                if ( isPrime) {
+                document.write(number + "là số nguyên tố");
+            } else {
+                document.write(number + "không là số nguyên tố");
+            }
+            }
+        } 
+        isPrime(number)
+    </script>
+</body>
+
+</html>
