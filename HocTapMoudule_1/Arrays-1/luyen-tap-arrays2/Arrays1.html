@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="submit" value="lesson 1" onclick="bai_1()">
+    <input type="submit" value="lesson 2" onclick="bai_2()">
+    <input type="submit" value="lesson 3" onclick="bai_3()">
+    <input type="submit" value="lesson 4" onclick="bai_4()">
+    <input type="submit" value="lesson 5" onclick="bai_5()">
+    <input type="submit" value="lesson 6" onclick="bai_6()">
+    <p id="result"></p>
+    <script>
+        function bai_1() {
+            let a = [
+                [1, 2, 1, 24],
+                [8, 11, 9, 4],
+                [7, 0, 7, 27],
+                [7, 4, 28, 14],
+                [3, 10, 26, 7]
+            ];
+            for (let i = 0; i < a.length; i++) {
+                document.write("row" + i + "<br>");
+                for (let j = 0; j < a[i].length; j++) {
+                    document.write(a[i][j] + "<br>");
+                }
+            }
+        }
+        function bai_2() {
+            let a = "h, a, i, b, i, n, h, 0, 6, 1, 2";
+            let str = a.split(",");
+            str.reverse();
+            document.write(str.join(""));
+        }
+
+        function bai_3() {
+            let count = 0;
+            let characters = prompt("Nhập 1 chuỗi các kí tự có trong mảng(ngăn cách bởi dấu ,):");
+            let str = characters.split(",");
+            for (let i = 0; i < str.length; i++) {
+                if (Number.isInteger(Number(str[i]))) {
+                    count++;
+                }
+            }
+            document.getElementById("result").innerHTML = "Số kí tự trong chuỗi vừa nhập là: " + count;
+        }
+
+        function bai_4() {
+            let count = 0;
+            let characters = prompt("Nhập 1 chuỗi các kí tự :");
+            let str = characters.split(",");
+            for (let i = 0; i < str.length; i++) {
+                if (typeof str[i] == 'string') {
+                    count++;
+                }
+            }
+            document.getElementById("result").innerHTML = count;
+        }
+        function bai_5() {
+            let enter_1 = prompt("Nhập 1 chuỗi");
+            let str_1 = enter_1.split(" ");
+            let enter_2 = prompt("Nhập 1 chuỗi tiếp theo :");
+            let str_2 = enter_2.split(" ");
+            for (let i = 0; i < str_1.length; i++) {
+                for (let j = 0; j < str_2.length; j++) {
+                    if (str_1[i] === str_2[j] && str_1.length === str_2.length) {
+                        document.write("Hai chuỗi giống nhau");
+                        break;
+                    } else {
+                        document.write("Hai chuỗi không giống nhau");
+                        break;
+                    }
+                }
+            }
+
+        }
+
+        function bai_6() {
+            let a = "-";
+            let keyword = "Chúng -ta của -hiện -tại -vẫn ế";
+            let str = keyword.split('');
+            for (let i = 0; i < str.length; i++) {
+                if (a.indexOf(str[i]) == 0) {
+                    str.splice(i, 1,"_");
+                }
+            }
+            document.write(str.join(''));
+        }
+    </script>
+</body>
+
+</html>

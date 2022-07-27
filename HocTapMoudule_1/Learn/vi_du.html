@@ -8,9 +8,14 @@
 </head>
 <body>
     <script>
-        for (let i = 0; i< 10;i++) {
-            console.log(i)
-        }
+let str = "Hôm nay tôi nay đi nay học";
+let letters = str.split(" ");
+for(let i = 0; i < letters.length ;i++){
+    if(letters[i] == "nay"){
+        letters[i] = "qua";
+    }
+}
+console.log(letters.join(" "));
     </script>
 </body>
 </html>
