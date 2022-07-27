@@ -16,7 +16,7 @@
             let isPrime = false;
 
             if (number == 0) {
-                document.write(number + "không phải là số nguyên tố");
+                document.write(number + " không phải là số nguyên tố");
             } else {
                 for (let i = 0; i <= number; i++) {
                     if (number % i == 0) {
@@ -25,13 +25,13 @@
                 } if (count == 2) {
                     isPrime = true;
                 }
-                if ( isPrime) {
-                document.write(number + "là số nguyên tố");
-            } else {
-                document.write(number + "không là số nguyên tố");
+                if (isPrime) {
+                    document.write(number + " là số nguyên tố");
+                } else {
+                    document.write(number + " không là số nguyên tố");
+                }
             }
-            }
-        } 
+        }
         isPrime(number)
     </script>
 </body>

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <label for="string">Nhập từ: </label>
+    <!-- <label for="string">Nhập từ: </label>
     <input type="text" name="" id="string">
     <button onclick="transcript()">Dịch</button>
     <p id="result"></p>
@@ -42,6 +42,81 @@
     }
     document.getElementById("result").innerHTML = result;
 }
+    </script> -->
+    <table>
+        <tbody>
+            <tr>
+                <td class="2">
+                    <select name="" id="language">
+                        <option value="VietNam">VietNam</option>
+                        <option value="English">English</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Keyword</td>
+                <td>
+                    <input id="keyword" type="text">
+
+                </td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td>
+                    <input id="result" type="text">
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="find()">Find</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        const vn = ["Trái táo", "Trái chuối", "Trái cam"];
+        const en = ["Apple", "Banane", "Orange"];
+
+        // Nhận vào từ TV trể về 1 từ TA
+        function translateVNEN(vnWord) {
+            let position = -1;
+            position = vn.findIndex(function (word) {
+                return word.toLocaleLowerCase() == vnWord.toLocaleLowerCase();
+            })
+            if (position != -1) {
+                return en[position];
+            }
+            return "Not found";
+        }
+
+        function translateENVN(enWord) {
+            let position = -1;
+            position = en.findIndex(function (word) {
+                return word.toLocaleLowerCase() == enWord.toLocaleLowerCase();
+            })
+            if (position != -1) {
+                return vn[position];
+            }
+            return "Not found";
+        }
+
+        function find() {
+            let language = document.querySelector("#language").value;
+            let keyword = document.querySelector("#keyword").value;
+            let result = "";
+            switch (language) {
+                case "VietNam": {
+                    result = translateENVN(keyword);
+                    break;
+                }
+                case "English": {
+                    result = translateVNEN(keyword);
+                    break;
+                }
+            }
+            document.querySelector("#result").value = result;
+        }
     </script>
 </body>
 
