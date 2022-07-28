@@ -10,11 +10,14 @@
 
 <body>
     <script>
-        function enternumber(number) {
-            number += 1;
-            document.write(number);
+       function bigger(number1, number2) {
+            if (number1 > number2) {
+                alert(`number1 lớn hơn number2!`);
+            }
+            else alert(`tong cua hai so la:${number1 + number2}`);
         }
-        enternumber(5);
+        bigger(7, 8);
+
     </script>
 </body>
 
