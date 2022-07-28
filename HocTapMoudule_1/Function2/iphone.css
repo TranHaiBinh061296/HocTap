@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+.container {
+    width: 600px;
+    margin: 10px auto;
+    box-shadow:3px 3px 3px rgb(138, 142, 132) ;
+}
+.tbiphone {
+    width:100% ;
+}
+.tbiphone, .tbiphone tr, .tbiphone td, .tbiphone th {
+    border-collapse: collapse;
+    border:1px solid gray;
+} 
+.tbiphone>thead>tr{
+    background-color: grey;
+    color:white ;
+}
+.tbiphone th, .tbiphone td {
+    padding: 5px 10px;
+}
+.tbiphone>tbody>tr:hover{
+    background-color: rgb(228, 219, 219);
+    cursor: pointer;
+}
+.creat-iphone{
+    margin-bottom:5px;
+    display:flex ;
+}
+.creat-iphone input{
+    flex: 1;
+    padding: 7px 5px;
+    
+}
+.btn{
+    padding:5px 15px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+.btn_add{
+    background-color:green ;
+    color:white ; 
+}
+.btn_Edit{
+    background-color:yellow ;
+}
+.btn_Delete{
+    background-color:red ;
+    color: white;
+}
+.done{
+    display:none ;
+}
+.form-control{
+    padding:7px 7px;
+}

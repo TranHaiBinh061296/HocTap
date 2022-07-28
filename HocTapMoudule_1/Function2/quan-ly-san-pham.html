@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="iphone.css">
+</head>
+<body>
+    <div class="container">
+        <div class="creat-iphone">
+            <input onkeypress="pressEnter(event)" id="iphonename" type="text" placeholder="Enter iphone name">
+            <button onclick="addIphone()" class="btn btn_add">Add</button> 
+        </div>
+        <div><b>Display All Product</b></div><br>
+        <div>
+            <table class="tbiphone">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th colspan="2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="iphone.js"></script>
+</body>
+</html>
