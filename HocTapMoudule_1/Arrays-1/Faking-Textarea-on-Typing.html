@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ứng dụng vui Faking Textarea on Typing</title>
 </head>
-<body>
-    
+<body onload="Troll()" style="text-align: center;">
+    <h1>Type anthing slowly</h1>
+    <form>
+        <label for="txt">
+            <textarea name="txt" id="txt" cols="50" rows="10"></textarea>
+        </label>
+    </form>
+    <script>
+        let array = [], str = '';
+        array[1] = 'T';
+        array[2] = 'H';
+        array[3] = 'À';
+        array[4] = 'N';
+        array[5] = 'H';
+        array[6] = ' ';
+        array[7] = 'C';
+        array[8] = 'Ô';
+        array[9] = 'N';
+        array[10] = 'G';
+        array[11] = ' ';
+        array[12] = 'N';
+        array[13] = 'Ó';
+        array[14] = 'I';
+        array[15] = ' ';
+        array[16] = 'K';
+        array[17] = 'H';
+        array[18] = 'Ô';
+        array[19] = 'N';
+        array[20] = 'G';
+        array[21] = ' ';
+        array[22] = 'V';
+        array[23] = 'Ớ';
+        array[24] = 'I';
+        array[25] = ' ';
+        array[26] = 'T';
+        array[27] = 'R';
+        array[28] = 'Ì';
+        array[29] = ' ';
+        array[30] = 'H';
+        array[31] = 'O';
+        array[32] = 'Ã';
+        array[33] = 'N';
+        array[34] = '!';
+        function Troll(){
+            let text = document.getElementById('txt').value;
+                for(let i = 1 ; i <= text.length; i++){
+                    str = str + array[i];
+                    if(i === 35){
+                        str = '';
+                    }
+                }
+            document.getElementById('txt').value = str;
+            str = '';
+            setTimeout('Troll()',1);
+            }
+    </script>
 </body>
 </html>
