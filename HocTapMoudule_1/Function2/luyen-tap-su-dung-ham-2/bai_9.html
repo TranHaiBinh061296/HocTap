@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str1 = ['a']
+        let str2 = ['a', 'b', 'c','d','h','a','h', 'a'];
+        function findCharacters(str1, str2) {
+            let count = 0 ;
+            let postion = 0;
+            for (let i = 0; i < str2.length; i++) {
+                if (str1[0] == str2[i]) {
+                    postion = 1;
+                    count++;
+                }
+            }
+            if (postion == 1) {
+                alert("Số lần xuất hiện của ký tự đó " + count)
+            } else {
+                alert("-1")
+            }
+
+        }
+        findCharacters(str1, str2);
+    </script>
+</body>
+</html>

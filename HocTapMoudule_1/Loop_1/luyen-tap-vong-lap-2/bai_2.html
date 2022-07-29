@@ -20,7 +20,7 @@
                 document.getElementById("result").innerHTML = 'Input must be a number.'
             } else {
                 let result = 1;
-                for (i = n; i > 0; i--) {
+                for (let i = n; i > 0; i--) {
                     result = result * i;
                 }
                 document.getElementById("result").innerHTML = `${n}! = ${result}`;
