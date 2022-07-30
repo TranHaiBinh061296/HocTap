@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+
+<body>
+    <canvas id="rectangle" width="500px" height="200px" style="border: 1px solid rgb(121, 213, 121);"></canvas>
+    <script>
+        let Rectangle = function (length, width) {
+            this.length = length;
+            this.getLength = function () {
+                return length;
+            }
+            this.width = width;
+            this.getWidth = function () {
+                return width;
+            }
+            this.getArea = function () {
+                return (length * width);
+            }
+            this.getPerimeter = function () {
+                return (length + width) * 2;
+            }
+        };
+        function createRectangle() {
+            var canvas = document.getElementById("rectangle");
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = "#2B7A0B";
+            ctx.fillRect(0,0,length,width);
+        }
+
+        let rectangle = new Rectangle(140, 50);
+        let length = rectangle.getLength();
+        let width = rectangle.getWidth();
+        let area = rectangle.getArea();
+        let perimeter = rectangle.getPerimeter();
+        document.write("Chu vi = " + perimeter + " Diện tích = " + area);
+        document.write(createRectangle());
+    </script>
+</body>
+
+</html>
