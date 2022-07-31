@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+    <script>
+        let Temperature = function(celsius) {
+            this.celsius = celsius;
+            this.getCelsius = function() {
+                return celsius;
+            }
+            this.getFahrenheit = function() {
+                return 9/5 * celsius + 32;
+            }
+            this.getKenvin = function() {
+                return celsius + 273.15;
+            }
+        }
+        let temperature = new Temperature(25);
+        let fahrenheit = temperature.getFahrenheit();
+        let kenvin = temperature.getKenvin();
+        document.write("Nhiệt độ F : " + fahrenheit + "<br>");
+        document.write("Nhiệt độ K :" + kenvin);
+    </script>
+</body>
+</html>
