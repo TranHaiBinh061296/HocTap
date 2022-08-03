@@ -5,147 +5,373 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loop 2</title>
-    <style>
-        table,tr,td{
-            border: 1px solid black;
-            border-collapse:  collapse;
-
-        }
-        table td:first-child{
-            width: 100px;
-        }
-        td{
-            padding: 5px;
-        }
-        table tr:hover{
-            background-color: green;
-            cursor: pointer;
-        }
-
-        .done{
-            text-decoration: line-through;
-        }
-
-        .d-none{
-            display: none;
-        }
-    </style>
 </head>
 <body>
-    <!-- <table border="1">
-        <tbody>
-            <tr>
-                <td>Job 1</td>
-                <td>
-                    <button>Remove</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Job 2</td>
-                <td>
-                    <button>Remove</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Job 3</td>
-                <td>
-                    <button>Remove</button>
-                </td>
-            </tr>
-        </tbody>
-    </table> -->
-    <div>
-        <button onclick="createJob()">Create Job</button>
+    <div class="nav">
+        <div class="nav_left">
+            <div class="home menu">
+                <h3>TRANG CHỦ</h3>
+            </div>
+            <div class="nav_introduce menu">
+                <h3>GIỚI THIỆU</h3>
+            </div>
+        </div>
+        <div class="nav_center">
+            <a href="">
+                <img src="../images/logo-2691.png" alt="">
+            </a>
+        </div>
+        <div class="nav_right">
+            <div class="product menu">
+                <h3>SẢN PHẨM</h3>
+            </div>
+            <div class="video menu">
+                <h3>VIDEO</h3>
+            </div>
+            <div class="contact menu">
+                <h3>LIÊN HỆ</h3>
+            </div>
+        </div>
     </div>
-    <div id="job-area">
-
+    <div class="header">
+        <div class="header_text">
+            <div class="header1">
+                <p>Trang Chủ</p>
+            </div>
+            <div class="dash">
+                <p>/</p>
+            </div>
+            <div class="header2">
+                <p>Sản Phẩm</p>
+            </div>
+            <div class="search-bar">
+                <input type="text" class="search" placeholder="Nhập vào đây để tìm kiếm..." oninput="search()"
+                    id="searchProduct">
+                <i class="bi bi-search"></i>
+            </div>
+        </div>
     </div>
-    <script>
-        let jobCount = 5;
-        let html = "<table>";
-        html += "<tbody>";
-        for(let row = 1; row <= jobCount; row ++){
-            html += `
-                    <tr id="tr_${row}">
-                        <td data-jobname='Job ${row}'>Job ${row}</td>
-                        <td>
-                            <button id="btnEdit_${row}" onclick="updateJob(${row})">Edit</button>
-                            <button id="btnSave_${row}" class="d-none" onclick="saveJob(${row})">Save</button>
-                            <button id="btnCancel_${row}" class="d-none" onclick="cancelJob(${row})">Cancel</button>
-                            <button onclick="removeJob(${row})">Remove</button>
-                        </td>
-                    </tr>
-                    `
-        }
-        html += "</tbody>";
-        html += "</table>";
-
-        document.querySelector('#job-area').innerHTML = html;
-
-        // function removeJob(row){
-        //     let confirmed = window.confirm("Are sure to remove this job?");
-        //     if(confirmed){
-        //         document.querySelector(`#tr_${row}`).remove()
-        //     }
-        // }
-        function removeJob(row){
-            let confirmed = window.confirm("Are sure to remove this job?");
-            if(confirmed){
-                document.querySelector(`#tr_${row} td:first-child`).classList.add('done');
-            }
-        }
-
-        // function updateJob(row){
-        //     let jobName = prompt('Enter job name: ');
-        //     document.querySelector(`#tr_${row} td:first-child`).innerText = jobName;
-        // }
-        function updateJob(row){
-            let tdJob = document.querySelector(`#tr_${row} td:first-child`);
-            let oldJobName = tdJob.innerText;
-            tdJob.innerHTML = `<input type='text' id="jobname_${row}" value='${oldJobName}'>`;
-            document.querySelector(`#btnEdit_${row}`).classList.add('d-none');
-            document.querySelector(`#btnSave_${row}`).classList.remove('d-none');
-            document.querySelector(`#btnCancel_${row}`).classList.remove('d-none');
-        }
-
-        function cancelJob(row){
-            let tdJob = document.querySelector(`#tr_${row} td:first-child`);
-            let jobName = document.querySelector(`#tr_${row} td:first-child`).getAttribute('data-jobname'); //document.querySelector(`#jobname_${row}`).value;
-            tdJob.innerHTML = jobName;
-            document.querySelector(`#btnEdit_${row}`).classList.remove('d-none');
-            document.querySelector(`#btnSave_${row}`).classList.add('d-none');
-            document.querySelector(`#btnCancel_${row}`).classList.add('d-none');
-        }
-        function saveJob(row){
-            let tdJob = document.querySelector(`#tr_${row} td:first-child`);
-            let jobName = document.querySelector(`#jobname_${row}`).value;
-            tdJob.innerHTML = jobName;
-            document.querySelector(`#btnEdit_${row}`).classList.remove('d-none');
-            document.querySelector(`#btnSave_${row}`).classList.add('d-none');
-            document.querySelector(`#btnCancel_${row}`).classList.add('d-none');
-        }
-
-        function createJob(){
-            let tbJob = document.querySelector('#job-area table tbody');
-            let tr = document.createElement("tr");
-            let newRow = ++jobCount;
-            tr.setAttribute("id", `tr_${newRow}`);
-            // tăng jobCount lên 1
-            // gán jobCount cho newRow
-            // let newRow = jobCount++;
-            // gán jobCount cho newRow
-            // tăng jobCount lên 1
-            tr.innerHTML = `
-                        <td data-jobname='Job ${newRow}'>Job ${newRow}</td>
-                        <td>
-                            <button id="btnEdit_${newRow}" onclick="updateJob(${newRow})">Edit</button>
-                            <button id="btnSave_${newRow}" class="d-none" onclick="saveJob(${newRow})">Save</button>
-                            <button id="btnCancel_${newRow}" class="d-none" onclick="cancelJob(${newRow})">Cancel</button>
-                            <button onclick="removeJob(${newRow})">Remove</button>
-                        </td>
-                        `
-            tbJob.appendChild(tr);
-        }
-    </script>
+    <div class="form-add add-none">
+        <div>
+            <label for="addName">Nhập tên sản phẩm muốn thêm:</label>
+            <input type="text" id="addName">
+            <label for="addPrice">Nhập giá sản phẩm muốn thêm:</label>
+            <input type="number" id="addPrice" min=1 oninput="validity.valid||(value='');">
+            <label for="addImage">Nhập hình ảnh sản phẩm muốn thêm:</label>
+            <input type="url" id="addImage">
+        </div>
+        <div>
+            <button type="button" onclick="btnUpdateAdd()">Update</button>
+            <button type="button" onclick="clearFormAdd()">Cancel</button>
+        </div>
+    </div>
+    <div class="form-edit edit-none">
+        <div>
+            <label for="">Nhập tên sản phẩm muốn sửa</label>
+            <input type="text" id="editName">
+            <label for="editPrice">Nhập giá sản phẩm muốn sửa</label>
+            <input type="number" id="editPrice">
+            <label for="editImage">Nhập hình ảnh sản phẩm muốn sửa</label>
+            <input type="url" id="editImage">
+        </div>
+        <div>
+            <button type="button" onclick="btnUpdateEdit()">Update</button>
+            <button type="button" onclick="clearFormEdit()">Cancel</button>
+        </div>
+    </div>
+    <div class="header_content">
+        <div class="content_text">
+            <h2>SẢN PHẨM</h2>
 </body>
+<script>
+    class Product {
+    constructor(id, name, price, image) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.image = image;
+    }
+}
+const keyName = "SuperCar_Management_DB";
+// hàm lấy dữ liệu
+function getData(key) {
+    return JSON.parse(localStorage.getItem(key))
+}
+// hàm đặt dữ liệu
+function setData(key, data) {
+    localStorage.setItem(key, JSON.stringify(data))
+}
+var products = []
+// hàm kiểm tra và in ra danh sách sản phẩm
+function init() {
+    if (getData(keyName) == null) {
+        products = [
+            new Product(1, "Lamborghini", 3573000, 'images/lamborghini.jpg'),
+            new Product(2, "MayBach", 2943000, 'images/maybach.jpg'),
+            new Product(3, "Mercedes", 2384000, 'images/mercedes.jpg'),
+            new Product(4, "Rolls-Royce", 2746000, 'images/rollroyce.jpg'),
+            new Product(5, "Ferrari", 3148000, 'images/ferrari.jpg'),
+            new Product(6, "Mc Laren", 1924000, 'images/mclaren.jpg'),
+            new Product(7, "Porsche", 2478000, 'images/porsche.jpg'),
+            new Product(8, "BMW", 3439000, 'images/bmw.jpg'),
+        ]
+        setData(keyName, products);
+    }
+    else {
+        products = getData(keyName);
+    }
+}
+// Hàm tạo trang sản phẩm:
+function renderProducts(data) {
+
+    let htmls = data.map(function (product, index) {
+        return `
+        <div class="content_product">
+            <div class="content_product-img">
+                <img src="${product.image}" alt="">
+            </div>
+            <div class="content_product-name">
+                <p id="input_${product.id}"> ${product.name} </p>
+                <p> ${currencyFormat(product.price)} </p>
+            </div>
+            <div class="action">
+            <button type="button" onclick="btnAdd(${product.id})">Thêm</button>
+            <button type="button" onclick="btnEdit(${product.id})">Chỉnh sửa</button>
+            <button type="button" onclick="removeProduct(${product.id})">Xóa</button>
+            </div>
+        </div>
+        `
+    })
+    document.querySelector(".content").innerHTML = htmls.join("");
+    var number = document.getElementById('editPrice');
+
+    // Listen for input event on numInput.
+    // number.onkeydown = function (e) {
+    //     if (!((e.keyCode > 95 && e.keyCode < 106)
+    //         || (e.keyCode > 47 && e.keyCode < 58)
+    //         || e.keyCode == 8)) {
+    //         return false;
+    //     }
+    // }
+
+}
+var position = 0;
+// Hàm xóa sản phẩm:
+function removeProduct(id) {
+    let index;
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].id == id) {
+            index = i;
+        }
+    }
+    let confirmed = window.confirm(`Bạn có chắc chắn muốn xóa ${products[index].name} không?`);
+    if (confirmed) {
+        products.splice(index, 1);
+        setData(keyName, products);
+        renderProducts(products);
+    }
+}
+// hàm thêm sản phẩm
+function btnAdd(id) {
+    document.querySelector(".form-add").classList.remove("add-none");
+    position = id;
+}
+// hàm chỉnh sửa sản phẩm
+function btnEdit(pdtId) {
+    document.querySelector(".form-edit").classList.remove("edit-none");
+    position = pdtId;
+    let pdt = getIdProducts(pdtId);
+    console.log(pdtId)
+    let str = `
+    <div>
+    <label for="">Nhập tên sản phẩm muốn sửa</label>
+    <input type="text" id="editName" value="${pdt.name}"> 
+    <label for="editPrice">Nhập giá sản phẩm muốn sửa</label>
+    <input type="number" id="editPrice" value="${pdt.price}" min=1>
+    <label for="editImage">Nhập hình ảnh sản phẩm muốn sửa</label>
+    <input type="url" id="editImage" value="${pdt.image}">
+    <div>
+    <button type="button" onclick="btnUpdateEdit(${pdt.id})">Update</button>
+    <button type="button" onclick="clearFormEdit(${pdt.id})">Cancel</button>
+</div>
+</div>
+    `
+    document.querySelector('.form-edit').innerHTML = str;
+    var number = document.getElementById('editPrice');
+
+    // Listen for input event on numInput.
+    number.onkeydown = function (e) {
+        if (!((e.keyCode > 95 && e.keyCode < 106)
+            || (e.keyCode > 47 && e.keyCode < 58)
+            || e.keyCode == 8)) {
+            return false;
+        }
+    }
+
+
+}
+// hàm đặt lại định dạng sau khi thêm sản phẩm
+function clearFormAdd() {
+    document.querySelector(".form-add").classList.add("add-none");
+}
+// hàm đặt lại định dạng sau khi chỉnh sửa sản phẩm
+function clearFormEdit() {
+    document.querySelector(".form-edit").classList.add("edit-none");
+}
+// hàm cập nhật sau khi thêm sản phẩm
+function btnUpdateAdd() {
+    let product = sortGetId() + 1;
+    let addName = document.querySelector('#addName').value;
+    if (addName.trim() == "") {
+        alert("Hãy nhập tên!")
+        return;
+    } else {
+        products.name = addName;
+    }
+    let addPrice = Number(document.querySelector('#addPrice').value);
+    if (addPrice == "") {
+        alert("Hãy nhập giá!")
+        return;
+    } else {
+        products.price = addPrice;
+    }
+    let addImage = document.querySelector('#addImage').value;
+    if (addImage.trim() == "") {
+        alert("Hãy thêm hình ảnh!")
+        return;
+    } else {
+        products.image = addImage;
+    }
+    let pdt = new Product(product, addName, currencyFormat(addPrice), addImage);
+    products.push(pdt);
+    clearFormAdd();
+    // alertProductName(addName);
+    setData(keyName, products);
+    renderProducts(products);
+    resetProducts();
+}
+// hàm cập nhật sau khi chỉnh sửa sản phẩm 
+function btnUpdateEdit(pdtId) {
+    let pdt = getIdProducts(pdtId);
+    let editName = document.querySelector('#editName').value;
+    let editPrice = document.querySelector('#editPrice').value;
+    let editImage = document.querySelector('#editImage').value;
+
+    if (editPrice < 0) {
+        alert("gia khong hop le")
+        return;
+    }
+    // if (editPrice.equals("-")) {
+    //     alert("gia khong hop le")
+    //     return;
+    // }
+
+    pdt.name = editName;
+    pdt.price = Number(editPrice);
+    pdt.image = editImage;
+    // document.querySelector('.form-edit').classList.add('edit-none');
+    setData(keyName, products);
+    clearFormEdit();
+    renderProducts(products);
+
+
+}
+// hàm báo tên sản phẩm
+function alertProductName() {
+    let reset = document.querySelector('#addName').value;
+    // if (reset.trim() == '') {
+    //     return alert('xin nhap ten')
+    // }
+}
+// hàm cài lại sản phẩm
+function resetProducts() {
+    let pdtId = document.querySelector('#addName').value = '';
+    let addPrice = document.querySelector('#addPrice').value = '';
+    let addImage = document.querySelector('#addImage').value = '';
+}
+// hàm lấy id của sản phẩm
+function getIdProducts(pdtId) {
+    let product = products.find(function (pdt1) {
+        return pdt1.id == pdtId
+    })
+    return product;
+
+}
+// hàm sắp xếp 
+function sortGetId() {
+    let arr = [...products]
+    let getId = arr.sort(function (pdtId1, pdtId2) {
+        return pdtId2.id - pdtId1.id
+    })[0].id
+    console.log(getId)
+    return getId;
+
+}
+
+// hàm định dạng tiền tệ 
+function currencyFormat(number) {
+
+    return number.toLocaleString("en-US", {
+
+        style: "currency",
+        currency: "USD",
+
+    })
+
+}
+// hàm để tìm kiếm sản phẩm 
+function search() {
+    let keywork = document.querySelector('.search').value;
+    let result = products.filter(function (product) {
+        return product.name.toLowerCase().indexOf(keywork.toLowerCase()) != -1;
+    })
+    renderProducts(result);
+}
+
+// // tim kiem 
+// function searchProduct() {
+//     let keysearch = document.querySelector('#searchProduct').value.toLowerCase();
+//     let arrKeySearch = keysearch.split('');
+//     console.log(arrKeySearch)
+//     let result = [];
+//     if (arrKeySearch.length == 1) {
+//         for (let i = 0; i < products.length; i++) {
+//             let sizeName = products[i].name.length;
+//             for (let j = 0; j < sizeName; j++) {
+//                 if (keysearch == products[i].name[0].toLowerCase()) {
+//                     result.push(products[i]);
+//                     break;
+//                 }
+//             }
+//         }
+//     } else {
+//         for (let i = 0; i < products.length; i++) {
+//             let sizeName = products[i].name.length;
+//             console.log(sizeName);
+//             console.log("arrKeySearch")
+//             console.log(arrKeySearch);
+//             for (let j = 0; j < sizeName; j++) {
+//                 if (arrKeySearch[0] == products[i].name[0].toLowerCase() && arrKeySearch[1] == products[i].name[j].toLowerCase()) {
+//                     result.push(products[i]);
+//                     break;
+//                 }
+//             }
+//         }
+//     }
+//     console.log(result);
+//     if (result.length == 0) {
+//         renderProducts(products);
+//     } else {
+//         renderProducts(result);
+//     }
+// }
+
+
+// document.querySelector("#editPrice").addEventListener("change", checkNumber);
+
+init()
+renderProducts(products);
+
+
+</script>
 </html>

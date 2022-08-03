@@ -1,0 +1,152 @@
+*{
+    padding: 0px;
+    margin:0px ;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-collapse: collapse;
+
+}
+body{
+    width: 1350px;
+    margin: auto;
+}
+.row{
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+}
+.left-side{
+    width: 30%;
+    background-color: #dadfe5;
+}
+.right-side{
+    width: 70%;
+    background-color:#dadfe5;
+    float: right;
+    border: 1px solid red;
+    
+}
+.tbpharmacy{
+    float: right;
+    width: 90%;
+}
+
+.form-group {
+    display: flex;
+    padding:2px ;
+}
+.form-group>label {
+    width: 100px; ;
+}
+.form-control {
+    border: none;
+    outline: none;
+    padding: 5px 0px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    width: 100%;
+}
+.btn {
+    border: none;
+    outline: none;
+    border: 1px solid #EFEFEF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 3px;
+    /* width:60px ;
+    height:30px; */
+}
+.btn-primary {
+    color: white ;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    color:#EFEFEF;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+.btn-warning {
+    color: #212529;
+    background-color:#ffc107;
+    border-color: #ffc107;
+}
+.btn-warning:hover {
+    color: #212529;
+    background-color:#e0a800;
+    border-color: #d39e00;
+}
+.btn-memo {
+    color: white;
+    background-color: rgb(11, 155, 11);
+    border-color:  rgb(11, 155, 11);
+}
+.btn-memo:hover {
+    color: white;
+    background-color: rgb(9, 88, 9);
+    border-color: rgb(6, 147, 6);
+}
+.btn-danger {
+    color: white;
+    background-color : #D61C4E ;
+    border-color: rgb(217, 36, 36) ;
+}
+.btn-danger:hover {
+    color: white;
+    background-color:rgb(238, 18, 18) ;
+    border-color: #D61C4E;
+}
+.tbpharmacy tr, th, td {
+    border: 1px solid #333;
+}
+.tbpharmacy td:hover {
+    background-color: rgb(234, 210, 210);
+    cursor: pointer;
+}
+.tbpharmacy>thead {
+    background-color: #333;
+    color: white;
+}
+th , td {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #7fa5ed;
+}
+
+li {
+    float: left;
+    background-color: #7fa5ed;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+li button {
+    text-align: right;
+    padding: 10px;
+    margin: 3px;
+}
+.btn-login {
+    float: right;
+    padding-top: 7px;
+    width: 20%;
+}
+
+li a:hover {
+    background-color: #6070e7;
+    cursor: pointer;
+}
+.done {
+    display: none;
+}
