@@ -40,7 +40,7 @@ function renderProduct() {
                     <td >
                     <img style="width:60px; height:60px;" src="${product.image}" alt="">
                     </td>
-                    <td>${product.price}</td>
+                    <td>${formatCurrency(product.price)}</td>
                     <td>${product.manufactory}</td>
                     <td>
                         <button onclick="editPharmacy(${product.id})" id="edit_${product.id}" class="btn btn-warning">Edit</button>
@@ -51,6 +51,10 @@ function renderProduct() {
     });
     document.querySelector('.tbpharmacy>tbody').innerHTML = htmls.join("");
 }
+function formatCurrency(number) {
+    return number.toLocaleString('vi', { style: 'currency', currency: 'VND' });
+}
+
 function addPharmacy() {
     let productName = document.querySelector("#productName").value;
     if (productName == null || productName == "") {
@@ -92,20 +96,28 @@ function removePharmacy(id) {
     }
 }
 function sort(direct) {
-    if (direct == sort_asc) {
+    if (direct == "sort_asc") {
         products.sort(function (pdt1, pdt2) {
             return pdt1.price - pdt2.price;
         });
     } else {
-        products.reverse();
+        //products.reverse();
+        products.sort(function (pdt1, pdt2) {
+            return pdt2.price - pdt1.price;
+        });
     }
     renderProduct();
 }
-function sort(direct) {
-    if (direct == sort_asc) {
-        sort();
+function sortabc(direct) {
+    if (direct == "sortabc_asc") {
+        products.sort(function (pdt1, pdt2) {
+            return pdt1.name.localeCompare(pdt2.name);
+        });
     } else {
-        products.reverse();
+        //products.reverse();
+        products.sort(function (pdt1, pdt2) {
+            return pdt2.name.localeCompare(pdt1.name);
+        });
     }
     renderProduct();
 }
@@ -127,7 +139,7 @@ function editPharmacy(pdtId) {
             document.querySelector("#cancel").classList.remove('done');
             return;
         }
-    })
+    });
 }
 
 function cancelPharmacy(pdtId) {
@@ -153,6 +165,13 @@ function savePharmacy() {
     setData(key_data, products);
     clearForm();
     renderProduct();
+}
+function search() {
+    let keywork = document.querySelector('.search').value;
+    let result = products.filter(function (product) {
+        return product.name.toLowerCase().indexOf(keywork.toLowerCase()) != -1;
+    })
+    renderProducts(result);
 }
 function main() {
     init();

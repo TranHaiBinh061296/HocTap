@@ -22,6 +22,8 @@
             <li><a href="">Tư vấn</a></li>
             <li><a href="">Hỗ trợ</a></li>
             <li><a href="">Sản phẩm</a></li>
+            <li><input type="text" placeholder="Tìm kiếm sản phẩm"></li>
+            <li><button class="search">Search</button></li>
             <div class="btn-login">
                 <li><button class="btn-memo">Đăng nhập</button></li>
                 <li><button class="btn-danger">Đăng ký</button></li>
@@ -45,8 +47,19 @@
                     <div class="form-group">
                         <label for="manufactory">Manufactory</label>
                         <input type="text" id="manufactory" class="form-control">
+                        <!-- <form action="/action_page.php">
+                            <label for="cars">Choose a car:</label>
+                            <select name="cars" id="cars">
+                              <option value="volvo">Volvo</option>
+                              <option value="saab">Saab</option>
+                              <option value="opel">Opel</option>
+                              <option value="audi">Audi</option>
+                            </select>
+                            <br><br>
+                            <input type="submit" value="Submit">
+                          </form> -->
                     </div>
-                    <div class="form-group">
+                    <div class="form-group addsave ">
                         <button onclick="addPharmacy()" class="btn btn-primary">Add</button>
                         <button onclick="savePharmacy()" class="btn btn-memo">Save</button>
                         <button id="cancel" onclick="cancelPharmacy()" class="btn done btn-danger">Cancel</button>
@@ -55,17 +68,20 @@
             </div>
             <div class="right-side">
                 <table class="tbpharmacy">
-                    <thead>
+                    <thead >
                         <tr>
                             <th colspan="7">Drug List</th>
                         </tr>
                         <tr>
                             <th>ID</th>
-                            <th>Product Name</th>
+                            <th>Product Name
+                                 <span title="Acsending" onclick="sortabc('sortabc_asc')">&#x25B2;</span>
+                                <span title="Descending" onclick="sortabc('sortabc_desc')">&#x25BC;</span>
+                            </th>
                             <th>Image</th>
                             <th>Price
-                                <span title="Acsending" onclick="sort('asc')">&#x25B2;</span>
-                                <span title="Descending" onclick="sort('desc')">&#x25BC;</span>
+                                <span title="Acsending" onclick="sort('sort_asc')">&#x25B2;</span>
+                                <span title="Descending" onclick="sort('sort_desc')">&#x25BC;</span>
                             </th>
                             <th>Manufactory</th>
                             <th>Actions</th>

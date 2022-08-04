@@ -23,8 +23,6 @@ body{
     width: 70%;
     background-color:#dadfe5;
     float: right;
-    border: 1px solid red;
-    
 }
 .tbpharmacy{
     float: right;
@@ -36,7 +34,10 @@ body{
     padding:2px ;
 }
 .form-group>label {
-    width: 100px; ;
+    flex: 1;
+}
+.addsave{
+    text-align: center;
 }
 .form-control {
     border: none;
@@ -44,18 +45,16 @@ body{
     padding: 5px 0px;
     border: 1px solid #333;
     border-radius: 5px;
-    width: 100%;
+    flex: 3;
 }
 .btn {
     border: none;
     outline: none;
     border: 1px solid #EFEFEF;
-    padding: 5px 10px;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     margin: 3px;
-    /* width:60px ;
-    height:30px; */
 }
 .btn-primary {
     color: white ;
@@ -105,11 +104,15 @@ body{
     cursor: pointer;
 }
 .tbpharmacy>thead {
+    height: 60px;
     background-color: #333;
     color: white;
 }
 th , td {
     text-align: center;
+}
+td {
+    height: 80px;
 }
 ul {
     list-style-type: none;
@@ -136,11 +139,35 @@ li button {
     text-align: right;
     padding: 10px;
     margin: 3px;
+    border-radius: 10px;
+}
+.search{
+    border: none;
+    border-radius: 15px;
+    margin-top: 10px ;
+    background-color: white;
+}
+.search:hover{
+    color:black ;
+    background-color: #ffffffba;
+    cursor: pointer;
 }
 .btn-login {
     float: right;
     padding-top: 7px;
     width: 20%;
+}
+li input{
+    border: none;
+    outline: none;
+    width: 400px;
+    height: 35px;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-left: 50px;
+    padding-left: 30px;
+    font-size: 15px;
+
 }
 
 li a:hover {
